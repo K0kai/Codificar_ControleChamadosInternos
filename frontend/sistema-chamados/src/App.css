@@ -1,0 +1,423 @@
+/* ── App shell ─────────────────────────────────────────────── */
+.app-shell {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ── Summary band ───────────────────────────────────────────── */
+.summary-band {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-band h1 {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin-bottom: 6px;
+  
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.primary-action,
+button {
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 14px;
+  color: var(--text-strong);
+  background: var(--surface-raised);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.primary-action {
+  border-color: var(--primary);
+  color: #ffffff;
+  background: var(--primary);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--primary-hover);
+}
+
+.primary-action:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* ── Metrics grid ───────────────────────────────────────────── */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.metric {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--surface);
+  transition: border-color 0.15s;
+}
+
+.metric:hover {
+  border-color: #3a4a63;
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--text-strong);
+  font-size: 30px;
+  line-height: 1;
+}
+
+/* ── Trend badges ───────────────────────────────────────────── */
+.trend {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.trend-up {
+  background: #162312;
+  color: #4ade80;
+}
+
+.trend-dn {
+  background: #2a1215;
+  color: #f87171;
+}
+
+/* ── Feedback banner ────────────────────────────────────────── */
+.feedback {
+  margin-bottom: 18px;
+  border: 1px solid #4a3210;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #fbbf24;
+  background: #1c1507;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Workbench layout ───────────────────────────────────────── */
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ── Panels ─────────────────────────────────────────────────── */
+.list-panel,
+.side-panel > section,
+.ticket-form {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-heading h2,
+.details h3 {
+  margin: 0;
+  color: var(--text-strong);
+}
+
+.panel-heading span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ── Filters ────────────────────────────────────────────────── */
+.filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.4fr) repeat(3, minmax(140px, 1fr)) auto;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 11px;
+  color: var(--text-strong);
+  background: var(--bg);
+  font: inherit;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+select option {
+  background: var(--bg);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.filters button {
+  align-self: end;
+}
+
+/* ── Ticket table ───────────────────────────────────────────── */
+.ticket-table {
+  overflow-x: auto;
+}
+
+.ticket-row {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.5fr) 150px 128px 150px 70px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  min-width: 820px;
+  height: auto;
+  min-height: 64px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 12px 16px;
+  text-align: left;
+  background: transparent;
+  transition: background 0.12s;
+}
+
+.ticket-row:hover {
+  background: #1a2236;
+}
+
+.ticket-row.is-selected {
+  background: #1a2640;
+}
+
+.ticket-row strong,
+.ticket-row small {
+  display: block;
+}
+
+.ticket-row strong {
+  color: var(--text-strong);
+  font-size: 14px;
+}
+
+.ticket-row small,
+.ticket-row time {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ── Pills ──────────────────────────────────────────────────── */
+.pill {
+  display: inline-flex;
+  justify-content: center;
+  width: fit-content;
+  min-width: 72px;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.priority-baixa  { color: #4ade80; background: #0e2416; }
+.priority-media  { color: #fbbf24; background: #1c1507; }
+.priority-alta   { color: #f87171; background: #2a1215; }
+
+.status-aberto     { color: #60a5fa; background: #0d1e36; }
+.status-emandamento { color: #fb923c; background: #221208; }
+.status-resolvido,
+.status-fechado    { color: #4ade80; background: #0e2416; }
+
+/* ── Empty state ────────────────────────────────────────────── */
+.empty-state {
+  padding: 28px 16px;
+  color: var(--muted);
+}
+
+/* ── Side panel ─────────────────────────────────────────────── */
+.side-panel {
+  display: grid;
+  gap: 18px;
+}
+
+/* ── Ticket form ────────────────────────────────────────────── */
+.ticket-form {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 16px;
+}
+
+.ticket-form > label,
+.ticket-form > .form-grid,
+.ticket-form > .check-line,
+.form-actions {
+  margin-inline: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.check-line {
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.check-line input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── Detail panel ───────────────────────────────────────────── */
+.details {
+  padding-bottom: 16px;
+}
+
+.details h3,
+.details p,
+.details dl,
+.status-actions {
+  margin-inline: 16px;
+}
+
+.details h3 {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.details p {
+  margin-top: 8px;
+  color: var(--text);
+}
+
+.details dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.details dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.details dd {
+  margin: 3px 0 0;
+  color: var(--text-strong);
+}
+
+.status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1120px) {
+  .workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .summary-band,
+  .side-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-band {
+    display: grid;
+    align-items: start;
+  }
+
+  .metrics-grid,
+  .filters,
+  .form-grid,
+  .details dl {
+    grid-template-columns: 1fr;
+  }
+
+  .filters button,
+  .primary-action {
+    width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+.page-navigator {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  justify-content: center;
+}
+.page-navigator button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+.page-navigator button:hover {
+  background-color: var(--surface);
+  color: var(--text-strong);
+}
+.page-navigator button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.page-navigator .active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.page-navigator .active:hover {
+  background-color: var(--primary-hover);
+}
