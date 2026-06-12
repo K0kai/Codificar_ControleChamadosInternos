@@ -13,6 +13,9 @@ Projeto para cadastro, acompanhamento e distribuição de chamados internos.
 - Node.js
 - npm
 
+## Hospedagem
+Publiquei uma hospedagem no plano gratuido do Render nesta [URL](https://codificar-controlechamadosinternos-1.onrender.com/), caso queira checar por aqui!
+
 ## Como executar
 
 Em um terminal, suba o backend:
