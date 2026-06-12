@@ -67,6 +67,3 @@ VITE_API_URL=http://localhost:5077/api
 - A base de dados foi utilizado SQLite pois é muito mais simples de rodar localmente e de subir rapidamente como projeto, porém em produção real você pode e deve utilizar um banco de dados em nuvem
 - Também adicionei TanStack Query ao React para o maximizar a responsividade do site e também otimizar as queries a API
 - Apesar de ter colocado os status e prioridade dos tickets em português, idealmente você provavelmente colocaria em inglês e faria uma função para traduzir em outras linguas, não fiz isso para economizar tempo
-
-## Nota final
-- Apesar de ter usado SQLite como banco de dados, foi apenas para fins técnicos, em um ambiente de produção real você pode e deve utilizar um banco de dados em nuvem
