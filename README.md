@@ -61,3 +61,6 @@ VITE_API_URL=http://localhost:5077/api
 - .NET + Entity Framework + SQLite no backend para persistência local sem depender de serviços externos.
 - A regra de "em aberto" considera `Aberto` e `EmAndamento`; `Resolvido` e `Fechado` são concluídos e não entram na carga de distribuição.
 - A distribuição automática fica no backend, garantindo que a regra seja única mesmo que outro cliente consuma a API.
+
+## Nota final
+- Apesar de ter usado SQLite como banco de dados, foi apenas para fins técnicos, em um ambiente de produção real você pode e deve utilizar um banco de dados em nuvem
